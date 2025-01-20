@@ -1,13 +1,37 @@
+<div class="d-flex justify-content-center py-2">
+  <button type="button" class="btn btn-primary" (click)="addUser()">add user</button>
+</div>
 <dx-data-grid
   id="gridContainer"
-  dataSource="assets/fake-data.json"  
-  [columns]="['FirstName', 'LastName', 'Age', 'Education', 'NationalID', 'BirthDate']"
+  dataSource="assets/fake-data.json"
   [showBorders]="true"
+  [width]="'100%'"
+  [height]="600"
 >
-<dxo-search-panel
-    [visible]="true"
-    [highlightCaseSensitive]="true"
-  ></dxo-search-panel>
+  <dxo-search-panel [visible]="true" [highlightCaseSensitive]="true">
+  </dxo-search-panel>
 
+  <!-- تعریف ستون‌ها -->
+  <!-- <dxi-column dataField="ProfilePhoto" caption="Profile Photo">
+    <ng-template dxTemplate="cellTemplate" let-data="data">
+      <img [src]="data.value" alt="Profile Photo" width="30" height="30" />
+    </ng-template>
+  </dxi-column> -->
+  <dxi-column dataField="FirstName" caption="First Name"></dxi-column>
+  <dxi-column dataField="LastName" caption="Last Name"></dxi-column>
+  <dxi-column dataField="Age" caption="Age"></dxi-column>
+  <dxi-column dataField="Education" caption="Education"></dxi-column>
+  <dxi-column dataField="NationalID" caption="National ID"></dxi-column>
+  <dxi-column dataField="BirthDate" caption="Birth Date"></dxi-column>
+
+  <dxi-column type="buttons">
+    <dxi-button
+      cssClass="dx-link dx-link-edit dx-icon-edit dx-link-icon text-decoration-none px-1"
+      [onClick]="onEditClick"
+    ></dxi-button>
+    <dxi-button
+      cssClass="dx-link dx-link-delete dx-icon-trash dx-link-icon text-decoration-none px-1"
+      [onClick]="onDeleteClick"
+    ></dxi-button>
+  </dxi-column>
 </dx-data-grid>
-

@@ -1,0 +1,65 @@
+<div class="modal-header">
+    <h5 class="modal-title">{{ title }}</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="cancel()"></button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="userForm">
+      <div class="row">
+        <div class="col-6 p-2">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="First name"
+            formControlName="FirstName"
+          />
+        </div>
+        <div class="col-6 p-2">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Last name"
+            formControlName="LastName"
+          />
+        </div>
+        <div class="col-6 p-2">
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Age"
+            formControlName="Age"
+          />
+        </div>
+        <div class="col-6 p-2">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Education"
+            formControlName="Education"
+          />
+        </div>
+        <div class="col-6 p-2">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="National ID"
+            formControlName="NationalID"
+          />
+        </div>
+        <div class="col-6 p-2">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Birth Date"
+            formControlName="BirthDate"
+          />
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="cancel()">
+      Cancel
+    </button>
+    <button type="button" class="btn btn-primary" (click)="save()">Confirm</button>
+  </div>
+  
